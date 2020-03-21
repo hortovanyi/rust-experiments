@@ -14,7 +14,7 @@ fn print_parquet(path:&str ) {
     }
 }
 fn main() {
-    print_parquet("../data/parquet-arrow-nav-sat-fix-20200318132301.parquet"); 
+    print_parquet("./data/parquet-arrow-nav-sat-fix-20200318132301.parquet"); 
 }
 
 
