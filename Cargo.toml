@@ -3,5 +3,5 @@ members = [
 	"parquet-print",
 	"parquet-datafusion",
 	"parquet-arrow-print",
-	"parquet-generator"
+	# "parquet-generator" # <- generator doesnt work refer readme
 ]
