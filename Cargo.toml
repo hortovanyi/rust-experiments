@@ -2,4 +2,6 @@
 members = [
 	"parquet-print",
 	"parquet-datafusion",
+	"parquet-arrow-print",
+	"parquet-generator"
 ]

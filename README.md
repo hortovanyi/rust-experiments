@@ -45,3 +45,26 @@ cargo run -p parquet-datafusion
 ```
 This does not run at present as the sql parser is unable to parse the sql query `SELECT header.stamp.sec, header.stamp.nanosec, latitude, longitude WHERE status.status >= 1`
 
+## parquet-arrow-print
+Loads up the parquet file and attempt to read using the ParquetFileArrowReader. Then attempts to use the Arrow types.
+```
+cargo run -p parquet-arrow-print
+```
+This does not run at present as the position_covariance is a List(Float64) and it panicked with `Failed to read record batch!: ArrowError("Reading parquet list array into arrow is not supported yet!")`
+
+## parquet-generator
+
+Loads up a parquet file transforming each row into a NavSatFix struct. Attempts to yield from an parquet row iterator loop the struct. Unable to compile, get the following unresolvable error:
+```
+error[E0626]: borrow may still be in use when generator yields
+  --> parquet-generator/src/main.rs:83:24
+   |
+83 |         let mut iter = reader.get_row_iter(None).unwrap();
+   |                        ^^^^^^
+...
+90 |             yield gps.clone();
+   |             ----------------- possible yield occurs here
+
+```
+
+commenting out the code, such that build can occur without error
