@@ -68,3 +68,9 @@ error[E0626]: borrow may still be in use when generator yields
 ```
 
 commenting out the code, such that build can occur without error
+
+## parquet-coord-transform-print
+
+Loads up a parquet file and after converting into a NacSatFix struct uses impl methods to generate ecef, ned and enu where the later 2 use an origin lat, lon, altitude origin.
+
+The crate used for the coordinate transforms is docs.rs/crate/coord_transforms/

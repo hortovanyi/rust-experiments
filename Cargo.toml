@@ -3,5 +3,6 @@ members = [
 	"parquet-print",
 	"parquet-datafusion",
 	"parquet-arrow-print",
+	"parquet-coord-transform-print",
 	# "parquet-generator" # <- generator doesnt work refer readme
 ]
